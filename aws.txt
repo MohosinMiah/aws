@@ -5,8 +5,7 @@ https://github.com/stacksimplify/aws-eks-kubernetes-masterclass/blob/master/09-E
 # Delete Cluster
 https://github.com/stacksimplify/aws-eks-kubernetes-masterclass/tree/master/01-EKS-Create-Cluster-using-eksctl/01-04-Delete-EKSCluster-and-NodeGroups
 
-WIFPjp9friSf90iNUVRzHVwNo/GVlXEyScp5gGmM
-AKIAWA6K2PLFEVP6ZH6P
+
 
 
 # Create Cluster

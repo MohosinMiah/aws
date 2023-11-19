@@ -1,0 +1,101 @@
+# Create cluster
+https://github.com/stacksimplify/aws-eks-kubernetes-masterclass/tree/master/01-EKS-Create-Cluster-using-eksctl/01-02-Create-EKSCluster-and-NodeGroups
+# Fargate
+https://github.com/stacksimplify/aws-eks-kubernetes-masterclass/blob/master/09-EKS-Workloads-on-Fargate/09-01-Fargate-Profile-Basic/kube-manifests/02-Nginx-App1-Deployment-and-NodePortService.yml
+# Delete Cluster
+https://github.com/stacksimplify/aws-eks-kubernetes-masterclass/tree/master/01-EKS-Create-Cluster-using-eksctl/01-04-Delete-EKSCluster-and-NodeGroups
+
+WIFPjp9friSf90iNUVRzHVwNo/GVlXEyScp5gGmM
+AKIAWA6K2PLFEVP6ZH6P
+
+
+# Create Cluster
+eksctl create cluster --name=eksdemo2 \
+                      --region=us-east-1 \
+                      --zones=us-east-1a,us-east-1b \
+                      --without-nodegroup 
+
+# (Optional) If you created your cluster using eksctl, then you can skip this step.
+  This is because eksctl already completed this step for you.
+  Enable kubectl to communicate with your cluster by adding a new context to the kubectl config file. 
+aws eks update-kubeconfig --region us-east-1 --name eksdemo2
+
+# Get clusters
+eksctl get ctusters
+
+
+aws eks update-kubeconfig --region us-east-1 --name eksdemo1 
+
+eksctl get nodes
+
+# Create & Associate IAM OIDC Provider for our EKS Cluster
+ + Template
+eksctl utils associate-iam-oidc-provider \
+    --region region-code \
+    --cluster <cluter-name> \
+    --approve
+
+ + Replace with region & cluster name
+eksctl utils associate-iam-oidc-provider \
+    --region us-east-1 \
+    --cluster eksdemo2 \
+    --approve
+
+
+
+# Get List of clusters
+eksctl get cluster                  
+
+# # Create Public Node Group   
+eksctl create nodegroup --cluster=eksdemo2 \
+                       --region=us-east-1 \
+                       --name=eksdemo1-ng-public1 \
+                       --node-type=t2.micro \
+                       --nodes=2 \
+                       --nodes-min=2 \
+                       --nodes-max=2 \
+                       --node-volume-size=20 \
+                       --ssh-access \
+                       --ssh-public-key=kube-demo \
+                       --managed \
+                       --asg-access \
+                       --external-dns-access \
+                       --full-ecr-access \
+                       --appmesh-access \
+                       --alb-ingress-access 
+
+# For MAC or Linux or Windows10
+ssh -i kube-demo.pem ec2-user@44.204.130.62
+
+-------------------------------------
+
+
+# Fargate profile ******************************************
+# Get list of Fargate Profiles in a cluster
+eksctl get fargateprofile --cluster eksdemo2
+
+# Template
+eksctl create fargateprofile --cluster <cluster_name> \
+                             --name <fargate_profile_name> \
+                             --namespace <kubernetes_namespace>
+
+
+# Replace values
+eksctl create fargateprofile --cluster eksdemo2 \
+                             --name fp-demo \
+                             --namespace fp-dev
+
+
+
+kubectl delete svc eksdemo1
+
+
+--- DELETE ---
+eksctl get nodegroup --cluster=eksdemo2
+eksctl delete nodegroup --cluster=eksdemo2 --name=eksdemo1-ng-public1
+eksctl delete cluster eksdemo2
+
+
+
+
+

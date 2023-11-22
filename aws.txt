@@ -95,6 +95,56 @@ eksctl delete nodegroup --cluster=eksdemo2 --name=eksdemo1-ng-public1
 eksctl delete cluster eksdemo2
 
 
+===========================================KAFKA===================================
+Resource : https://aws.amazon.com/blogs/big-data/power-your-kafka-streams-application-with-amazon-msk-and-aws-fargate
+Code Example: 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-kafka-streams-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-kafka-streams-app
+  template:
+    metadata:
+      labels:
+        app: spring-kafka-streams-app
+    spec:
+      containers:
+      - name: spring-kafka-streams-app
+        image: your-ecr-repo-url/your-spring-kafka-streams-app:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: "prod"
+        - name: SPRING_KAFKA_BOOTSTRAP_SERVERS
+          value: "your-msk-bootstrap-servers"
+        - name: SPRING_KAFKA_CONSUMER_GROUP_ID
+          value: "your-consumer-group-id"
+        - name: SPRING_KAFKA_TOPIC
+          value: "your-input-topic"
+        - name: SPRING_KAFKA_OUTPUT_TOPIC
+          value: "your-output-topic"
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-kafka-streams-service
+spec:
+  selector:
+    app: spring-kafka-streams-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
+
+
+
 
 
 

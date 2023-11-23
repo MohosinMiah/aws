@@ -146,6 +146,8 @@ spec:
 # Viedeo Resource
 https://www.youtube.com/watch?v=J67CHCXHMxw
 
+https://www.youtube.com/watch?v=_wW-fP6CpwM&t=202s
+
 
 
 

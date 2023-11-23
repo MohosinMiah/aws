@@ -143,6 +143,8 @@ spec:
       targetPort: 8080
   type: LoadBalancer
 
+# Viedeo Resource
+https://www.youtube.com/watch?v=J67CHCXHMxw
 
 
 

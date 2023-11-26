@@ -8,6 +8,9 @@ https://github.com/stacksimplify/aws-eks-kubernetes-masterclass/tree/master/01-E
 # Kubenets fundamental
 https://github.com/stacksimplify/kubernetes-fundamentals/tree/master/02-PODs-with-kubectl
 
+# RDS Database
+https://github.com/stacksimplify/aws-eks-kubernetes-masterclass/tree/master/06-EKS-Storage-with-RDS-Database
+
 
 # Create Cluster
 eksctl create cluster --name=eksdemo2 \

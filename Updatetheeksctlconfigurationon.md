@@ -1,3 +1,4 @@
+```
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
@@ -12,3 +13,4 @@ vpc:
         id: subnet-03065c49a57867c4e
       us-east-1b:
         id: subnet-0e88852bd52146a88
+```

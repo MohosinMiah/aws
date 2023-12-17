@@ -67,6 +67,27 @@ eksctl create nodegroup --cluster=eksdemo2 \
                        --appmesh-access \
                        --alb-ingress-access 
 
+## Create Private Node Group
+eksctl create nodegroup --cluster=stagcluster \
+                       --region=us-east-1 \
+                       --name=eksdemo2 \
+                       --node-private-networking \
+                       --node-type=t2.micro \
+                       --nodes=2 \
+                       --nodes-min=2 \
+                       --nodes-max=2 \
+                       --node-volume-size=20 \
+                       --ssh-access \
+                       --ssh-public-key=test \
+                       --managed \
+                       --asg-access \
+                       --external-dns-access \
+                       --full-ecr-access \
+                       --appmesh-access \
+                       --alb-ingress-access
+# Get IP from a POD
+kubectl exec nginx-deployment-57d84f57dc-rndcf -- curl 'https://api.ipify.org?format=json'
+
 # For MAC or Linux or Windows10
 ssh -i kube-demo.pem ec2-user@44.204.130.62
 

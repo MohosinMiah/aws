@@ -106,7 +106,18 @@ spec:
                 port:
                   number: 9090
 ```
-
 Apply these Ingress resources using `kubectl apply -f <filename>`.
 
 This example provides a basic setup. Depending on your specific requirements and configurations, you may need to adjust the configurations accordingly. Make sure you have configured proper security groups and IAM roles for accessing resources within your AWS environment.
+
+
+# Step-04: Connect to RDS Database using kubectl and create usermgmt schema/db
+
+```
+kubectl run -it --rm --image=mysql:5.7.22 --restart=Never mysql-client -- mysql -h usermgmtdb.c7hldelt9xfp.us-east-1.rds.amazonaws.com -u dbadmin -pdbpassword11
+
+mysql> show schemas;
+mysql> create database usermgmt;
+mysql> show schemas;
+mysql> exit
+```

@@ -111,7 +111,8 @@ Apply these Ingress resources using `kubectl apply -f <filename>`.
 This example provides a basic setup. Depending on your specific requirements and configurations, you may need to adjust the configurations accordingly. Make sure you have configured proper security groups and IAM roles for accessing resources within your AWS environment.
 
 
-# Step-04: Connect to RDS Database using kubectl and create usermgmt schema/db
+#  Connect to RDS Database using kubectl and create usermgmt schema/db
+https://github.com/stacksimplify/aws-eks-kubernetes-masterclass/blob/master/06-EKS-Storage-with-RDS-Database/README.md
 
 ```
 kubectl run -it --rm --image=mysql:5.7.22 --restart=Never mysql-client -- mysql -h usermgmtdb.c7hldelt9xfp.us-east-1.rds.amazonaws.com -u dbadmin -pdbpassword11
@@ -121,3 +122,9 @@ mysql> create database usermgmt;
 mysql> show schemas;
 mysql> exit
 ```
+
+# EKS - Horizontal Pod Autoscaling (HPA)
+https://github.com/stacksimplify/aws-eks-kubernetes-masterclass/blob/master/15-EKS-HPA-Horizontal-Pod-Autoscaler/README.md
+
+
+

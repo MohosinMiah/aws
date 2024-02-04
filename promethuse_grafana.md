@@ -124,6 +124,94 @@ mysql> exit
 ```
 
 # EKS - Horizontal Pod Autoscaling (HPA)
+
+Sure, I'll provide you with a full example of setting up Horizontal Pod Autoscaling (HPA) in an AWS EKS cluster deployed in a private subnet. 
+
+First, let's set up the HPA:
+
+1. **Deploy a sample application**:
+   We'll deploy a sample application that we can scale horizontally. Here's a simple Deployment manifest for a sample Nginx web server:
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+```
+
+Apply this Deployment using `kubectl apply -f nginx-deployment.yaml`.
+
+2. **Enable metrics server**:
+   Horizontal Pod Autoscaler requires metrics from the Metrics Server. Deploy Metrics Server in your cluster:
+
+```bash
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+```
+
+3. **Create HorizontalPodAutoscaler**:
+   Next, create a HorizontalPodAutoscaler to scale the Nginx Deployment based on CPU utilization:
+
+```yaml
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: nginx-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: nginx-deployment
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      targetAverageUtilization: 50
+```
+
+This HPA will scale the `nginx-deployment` Deployment based on CPU utilization, targeting an average CPU utilization of 50%. It will scale between 2 and 10 replicas.
+
+Apply the HPA using `kubectl apply -f nginx-hpa.yaml`.
+
+4. **Test the scaling**:
+   To test the scaling, you can generate load on the Nginx Deployment. One simple way to generate load is by using a load testing tool like `hey` or `wrk`.
+
+For example, you can use `hey` to send a large number of requests to the Nginx service:
+
+```bash
+hey -z 1m -c 10 http://<nginx-service-ip>
+```
+
+This command sends requests to the Nginx service endpoint for 1 minute with a concurrency of 10 clients.
+
+5. **Observe scaling**:
+   Monitor the scaling behavior by checking the number of replicas in the Deployment and the HPA status:
+
+```bash
+kubectl get deployment nginx-deployment
+kubectl get hpa nginx-hpa
+```
+
+You should see the number of replicas in the Deployment increasing or decreasing based on the load, and the HPA scaling up or down accordingly.
+
+This example demonstrates the basic setup of Horizontal Pod Autoscaling in an AWS EKS cluster deployed in a private subnet. You can adjust the configurations and test with different workloads to observe how the autoscaling behavior adapts to changing demand.
+
 https://github.com/stacksimplify/aws-eks-kubernetes-masterclass/blob/master/15-EKS-HPA-Horizontal-Pod-Autoscaler/README.md
 
 

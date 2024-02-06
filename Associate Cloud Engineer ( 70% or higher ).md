@@ -14,7 +14,20 @@ Associate Cloud Engineer ( 70% or higher )
 https://www.examtopics.com/exams/google/associate-cloud-engineer/view/
 
 
-Certainly! Here's a sample set of 5 questions based on the "Setting up a cloud solution environment" section for the GCP Associate Cloud Engineer exam:
+## Questions
+
+<details>
+<summary><strong>Question 1:</strong> What is the primary purpose of creating a resource hierarchy in Google Cloud Platform?</summary>
+
+The primary purpose of creating a resource hierarchy in Google Cloud Platform is to apply organizational policies to resources.
+</details>
+
+<details>
+<summary><strong>Question 2:</strong> Which activity is crucial for managing and controlling access to resources within a Google Cloud project?</summary>
+
+The crucial activity for managing and controlling access to resources within a Google Cloud project is granting members IAM roles within the project.
+</details>
+
 
 **Question 1:**
 What is the primary purpose of creating a resource hierarchy in Google Cloud Platform?

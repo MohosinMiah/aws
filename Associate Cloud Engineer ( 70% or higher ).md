@@ -1,6 +1,6 @@
 Associate Cloud Engineer ( 70% or higher )
 
-Section 1: Setting up a cloud solution environment (~17.5% of the exam)
+# Section 1: Setting up a cloud solution environment (~17.5% of the exam)
 1.1 Setting up cloud projects and accounts. Activities include:
     ●  Creating a resource hierarchy
     ●  Applying organizational policies to the resource hierarchy

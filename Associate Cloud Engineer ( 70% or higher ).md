@@ -16,19 +16,6 @@ https://www.examtopics.com/exams/google/associate-cloud-engineer/view/
 
 ## Questions
 
-<details>
-<summary><strong>Question 1:</strong> What is the primary purpose of creating a resource hierarchy in Google Cloud Platform?</summary>
-
-The primary purpose of creating a resource hierarchy in Google Cloud Platform is to apply organizational policies to resources.
-</details>
-
-<details>
-<summary><strong>Question 2:</strong> Which activity is crucial for managing and controlling access to resources within a Google Cloud project?</summary>
-
-The crucial activity for managing and controlling access to resources within a Google Cloud project is granting members IAM roles within the project.
-</details>
-
-
 **Question 1:**
 What is the primary purpose of creating a resource hierarchy in Google Cloud Platform?
 
@@ -36,7 +23,7 @@ A) To enable APIs within projects
 B) To apply organizational policies to resources  
 C) To grant members IAM roles within a project  
 D) To manage users and groups in Cloud Identity  
-
+<details> B) To apply organizational policies to resources </details>
 **Question 2:**
 Which activity is crucial for managing and controlling access to resources within a Google Cloud project?
 

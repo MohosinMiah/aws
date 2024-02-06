@@ -23,7 +23,9 @@ A) To enable APIs within projects
 B) To apply organizational policies to resources  
 C) To grant members IAM roles within a project  
 D) To manage users and groups in Cloud Identity  
+
 <details> B) To apply organizational policies to resources </details>
+
 **Question 2:**
 Which activity is crucial for managing and controlling access to resources within a Google Cloud project?
 
@@ -31,6 +33,9 @@ A) Creating a resource hierarchy
 B) Applying organizational policies  
 C) Granting members IAM roles  
 D) Enabling APIs within the project  
+
+<details> C) Granting members IAM roles </details>
+
 
 **Question 3:**
 When setting up products in Google Cloud's operations suite, what is a key consideration to ensure effective monitoring and management?
@@ -40,6 +45,8 @@ B) Enabling APIs within projects
 C) Applying organizational policies to resources  
 D) Provisioning and configuring appropriate monitoring tools  
 
+<details> D) Provisioning and configuring appropriate monitoring tools </details>
+
 **Question 4:**
 What is the recommended approach for managing users and groups in Cloud Identity in a scalable and efficient manner?
 
@@ -48,6 +55,9 @@ B) Automated management of users and groups
 C) Granting members IAM roles  
 D) Creating a resource hierarchy  
 
+<details> B) Automated management of users and groups </details>
+
+
 **Question 5:**
 Before deploying any services or workloads in a Google Cloud project, which action is typically performed to establish a structured environment?
 
@@ -55,6 +65,9 @@ A) Enabling APIs within projects
 B) Creating a resource hierarchy  
 C) Applying organizational policies to resources  
 D) Granting members IAM roles  
+
+<details> B) Creating a resource hierarchy  </details>
+
 
 **Answers:**
 1. B) To apply organizational policies to resources

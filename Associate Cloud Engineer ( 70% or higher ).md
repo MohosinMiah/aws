@@ -1,22 +1,18 @@
 Associate Cloud Engineer ( 70% or higher )
 
 # Section 1: Setting up a cloud solution environment (~17.5% of the exam)
-1.1 Setting up cloud projects and accounts. Activities include:
-    ●  Creating a resource hierarchy
-    ●  Applying organizational policies to the resource hierarchy
-    ●  Granting members IAM roles within a project
-    ●  Managing users and groups in Cloud Identity (manually and automated)
-    ●  Enabling APIs within projects
-    ●  Provisioning and setting up products in Google Cloud’s operations suite
+## 1.1 Setting up cloud projects and accounts. Activities include:
+    ### ●  Creating a resource hierarchy
+    ### ●  Applying organizational policies to the resource hierarchy
+    ### ●  Granting members IAM roles within a project
+    ### ●  Managing users and groups in Cloud Identity (manually and automated)
+    ### ●  Enabling APIs within projects
+    ### ●  Provisioning and setting up products in Google Cloud’s operations suite
 
-Questions Bank Resources
-
-Google Associate Cloud Engineer Exam Actual Questions
+## Questions Bank Resources
+### Google Associate Cloud Engineer Exam Actual Questions
 https://www.examtopics.com/exams/google/associate-cloud-engineer/view/
 
-
-
-Certainly! Here are more sample questions along with their answers:
 
 **Question 13:**
 Which action should you take first when setting up a new project in Google Cloud Platform?

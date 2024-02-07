@@ -1,7 +1,9 @@
-Certainly! Below is a simplified example of deploying Prometheus and Grafana on AWS EKS using Helm charts, with persistent volume using EBS and an ALB Ingress Controller.
+[Certainly! Below is a simplified example of deploying Prometheus and Grafana on AWS EKS using Helm charts, with persistent volume using EBS and an ALB Ingress Controller.
+](https://chat.openai.com/share/2566c704-0b54-4674-a102-fcccb38906a9)
 
 1. **Install AWS ALB Ingress Controller**:
-   - Follow the official AWS documentation to install the ALB Ingress Controller in your EKS cluster.
+   - Follow the official A
+   - WS documentation to install the ALB Ingress Controller in your EKS cluster.
 
 2. **Create PersistentVolumeClaim YAML files**:
    - Create two files, `prometheus-pvc.yaml` and `grafana-pvc.yaml`, to define PersistentVolumeClaims for Prometheus and Grafana respectively:

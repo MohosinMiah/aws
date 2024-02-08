@@ -1,4 +1,5 @@
 Associate Cloud Engineer ( 70% or higher )
+https://youtu.be/jpno8FSqpc8?t=45022 
 
 # Section 1: Setting up a cloud solution environment (~17.5% of the exam)
 ## 1.1 Setting up cloud projects and accounts. Activities include:

@@ -1,3 +1,7 @@
+https://repost.aws/knowledge-center/eks-load-balancer-changes-automatically-reverted
+https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.4/guide/service/annotations/#lb-source-ranges
+
+https://chat.openai.com/share/36440f92-bc29-4c29-9cf5-25eb091ae189
 ```
 kubectl apply -k "github.com/aws/eks-charts/stable/aws-load-balancer-controller//crds?ref=master"
 helm repo add eks https://aws.github.io/eks-charts
